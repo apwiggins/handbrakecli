@@ -12,8 +12,9 @@ Transcode a file:
 1. Run the following command:
 
     ```
-    docker run -it --rm carolynvs/handbrakecli \
-        -v `pwd`:/tmp
+    docker run -it --rm \
+        -v `pwd`:/tmp \
+        carolynvs/handbrakecli \
         -i /tmp/input/inputfilename \
         -o /tmp/output/outputfilename \
         --preset "Fast 1080p30"
@@ -27,8 +28,9 @@ Transcode a file:
 1. Put a presets.json file in the config directory.
 1. Run the following command:
     ```
-    docker run -it --rm carolynvs/handbrakecli \
-        -v `pwd`:/tmp
+    docker run -it --rm \
+        -v `pwd`:/tmp \
+        carolynvs/handbrakecli \
         -i /tmp/input/inputfilename \
         -o /tmp/output/outputfilename \
         --preset-import-file /tmp/config/presets.json \
