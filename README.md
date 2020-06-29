@@ -12,12 +12,14 @@ Transcode a file:
 1. Run the following command:
 
     ```
-    docker run -it --rm \
-        -v `pwd`:/tmp \
-        carolynvs/handbrakecli \
-        -i /tmp/input/inputfilename \
-        -o /tmp/output/outputfilename \
-        --preset "Fast 1080p30"
+    #!/usr/bin/env bash
+    f=$1;nf=(`printf '%s' "${f%.mkv}_x265.mkv"`)
+    sudo docker run -it --rm \                       
+             -v `pwd`:/tmp \
+             carolynvs/handbrakecli \              
+             -i /tmp/input/"$1" \                        
+             -o /tmp/output/"$nf" \                
+             --preset "H.265 MKV 720p30"
     ```
 1. The completed video is saved to the output directory.
 
