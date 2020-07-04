@@ -12,6 +12,10 @@ Transcode a file:
 1. Run the following command:
 
     ```
+    usage:
+    ./hb.sh somefile.mkv
+    
+    #hb.sh
     #!/usr/bin/env bash
     f=$1;nf=(`printf '%s' "${f%.mkv}_x265.mkv"`)
     sudo docker run -it --rm \                       
